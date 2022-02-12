@@ -13,6 +13,7 @@ finish-args:
   - --device=dri
   - --env=PATH=/usr/bin:/app/bin:/app/jdk/bin
   - --env=JAVA_HOME=/app/jdk
+  - --persist=.local/share/Bisq
 modules:
   - name: openjdk
     buildsystem: simple
