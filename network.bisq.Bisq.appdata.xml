@@ -29,6 +29,7 @@
 
     <url type="homepage">https://bisq.network/</url>
     <releases>
+        <release version="1.9.4" date="2022-07-06"/>
         <release version="1.9.3" date="2022-07-02"/>
         <release version="1.9.2" date="2022-06-22"/>
         <release version="1.9.1" date="2022-05-06"/>
