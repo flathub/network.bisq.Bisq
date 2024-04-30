@@ -5,7 +5,7 @@
 
     <name>Bisq</name>
     <developer_name>Bisq</developer_name>
-    <summary>A decentralized bitcoin exchange network.</summary>
+    <summary>A decentralized bitcoin exchange network</summary>
 
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>AGPL-3.0-only</project_license>
