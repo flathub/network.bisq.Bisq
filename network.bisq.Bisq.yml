@@ -27,7 +27,7 @@ modules:
       - tar xf data.tar.xz
       - cp -r opt/bisq/lib /app/lib
       - install -D opt/bisq/bin/Bisq /app/bin/Bisq
-      
+
       - install -D network.bisq.Bisq.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
       - install -D network.bisq.Bisq.desktop /app/share/applications/${FLATPAK_ID}.desktop
       - install -D icon.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
@@ -47,7 +47,7 @@ modules:
       - type: file
         path: network.bisq.Bisq.desktop
       - type: file
-        url: https://github.com/bisq-network/bisq/raw/v1.9.16/Bisq1_icon.svg
+        url: https://github.com/bisq-network/bisq/raw/v1.9.17/Bisq1_icon.svg
         sha256: 6836845c01a1f1cc42117214c7c508eac9451b7e5c6d6dc40167d8a786b921ff
         dest-filename: icon.svg
         x-checker-data:
