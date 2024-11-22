@@ -30,8 +30,11 @@
 
     <url type="homepage">https://bisq.network/</url>
     <releases>
-        <release version="1.9.17" date="2024-06-27">
+        <release version="1.9.18" date="2024-11-22">
             <description></description>
+        </release>
+        <release version="1.9.17" date="2024-06-27">
+            <description/>
         </release>
         <release version="1.9.16" date="2024-06-23">
             <description/>
