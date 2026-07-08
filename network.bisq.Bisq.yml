@@ -55,4 +55,3 @@ modules:
           type: anitya
           project-id: 241531
           url-template: https://github.com/bisq-network/bisq/raw/v$version/Bisq1_icon.svg
-          release-url-template: https://github.com/bisq-network/bisq/releases/tag/v$version
