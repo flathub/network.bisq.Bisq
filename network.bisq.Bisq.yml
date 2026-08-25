@@ -33,21 +33,23 @@ modules:
       - install -D icon.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
     sources:
       - type: file
-        sha256: 7a44e97b08da083e4dab8e2f901e7d76a856b91457391661d83109adf1a5b143
-        url: https://bisq.network/downloads/v1.10.6/Bisq-64bit-1.10.6.deb
+        sha256: 2178ba91ddabd7bb43404e61506442f5ecad1ee4fca60e4c22710e711feb9cb6
+        url: https://github.com/bisq-network/bisq/releases/download/v1.10.6/Bisq-64bit-1.10.6.deb
         dest-filename: Bisq.deb
         only-arches:
           - x86_64
         x-checker-data:
-          type: anitya
-          project-id: 241531
-          url-template: https://bisq.network/downloads/v$version/Bisq-64bit-$version.deb
+          type: json
+          url: https://api.github.com/repos/bisq-network/bisq/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name == ("Bisq-64bit-" + $version + ".deb")) | .browser_download_url
           release-url-template: https://github.com/bisq-network/bisq/releases/tag/v$version
+          is-main-source: true
       - type: file
         path: network.bisq.Bisq.appdata.xml
       - type: file
         path: network.bisq.Bisq.desktop
       - type: file
-        url: https://github.com/bisq-network/bisq/raw/v$version/Bisq1_icon.svg
+        url: https://raw.githubusercontent.com/bisq-network/bisq/dd557bc73e5f312f3ecc571d96449bbe132d05ae/Bisq1_icon.svg
         sha256: 6836845c01a1f1cc42117214c7c508eac9451b7e5c6d6dc40167d8a786b921ff
         dest-filename: icon.svg
