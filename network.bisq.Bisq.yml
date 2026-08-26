@@ -25,6 +25,10 @@ modules:
       - ar x Bisq.deb
       - rm Bisq.deb
       - tar xf data.tar.xz
+      - >-
+        expected_version=$(xmllint --xpath 'string(/component/releases/release[1]/@version)' network.bisq.Bisq.appdata.xml)
+        && opt/bisq/bin/Bisq --help 2>&1
+        | grep -Fx "Bisq Desktop version ${expected_version}"
       - cp -r opt/bisq/lib /app/lib
       - install -D opt/bisq/bin/Bisq /app/bin/Bisq
 
@@ -39,15 +43,19 @@ modules:
         only-arches:
           - x86_64
         x-checker-data:
-          type: anitya
-          project-id: 241531
-          url-template: https://bisq.network/downloads/v$version/Bisq-64bit-$version.deb
+          type: json
+          url: https://api.github.com/repos/bisq-network/bisq/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          timestamp-query: .published_at
+          url-query: '"https://bisq.network/downloads/v" + $version +
+            "/Bisq-64bit-" + $version + ".deb"'
           release-url-template: https://github.com/bisq-network/bisq/releases/tag/v$version
+          is-main-source: true
       - type: file
         path: network.bisq.Bisq.appdata.xml
       - type: file
         path: network.bisq.Bisq.desktop
       - type: file
-        url: https://github.com/bisq-network/bisq/raw/v$version/Bisq1_icon.svg
+        url: https://raw.githubusercontent.com/bisq-network/bisq/6412213100fda41c760dba04d10eaa7748745779/Bisq1_icon.svg
         sha256: 6836845c01a1f1cc42117214c7c508eac9451b7e5c6d6dc40167d8a786b921ff
         dest-filename: icon.svg
