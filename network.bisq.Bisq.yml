@@ -33,8 +33,8 @@ modules:
       - install -D icon.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
     sources:
       - type: file
-        sha256: 3d18e920388c305dc0bf8ff7b099c4902500d17f880e296b6635084f6ef954e7
-        url: https://bisq.network/downloads/v1.10.7/Bisq-64bit-1.10.7.deb
+        sha256: 8add3718343725adb5424c26c66496348fcf81a5b8e0d1b43b4af48c4863b1fb
+        url: https://bisq.network/downloads/v1.10.8/Bisq-64bit-1.10.8.deb
         dest-filename: Bisq.deb
         only-arches:
           - x86_64
