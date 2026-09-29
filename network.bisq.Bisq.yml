@@ -43,14 +43,10 @@ modules:
         only-arches:
           - x86_64
         x-checker-data:
-          type: json
-          url: https://api.github.com/repos/bisq-network/bisq/releases/latest
-          version-query: .tag_name | sub("^v"; "")
-          timestamp-query: .published_at
-          url-query: '"https://bisq.network/downloads/v" + $version +
-            "/Bisq-64bit-" + $version + ".deb"'
+          type: anitya
+          project-id: 241531
+          url-template: https://bisq.network/downloads/v$version/Bisq-64bit-$version.deb
           release-url-template: https://github.com/bisq-network/bisq/releases/tag/v$version
-          is-main-source: true
       - type: file
         path: network.bisq.Bisq.appdata.xml
       - type: file
